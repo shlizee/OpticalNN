@@ -1,7 +1,7 @@
 """
 adopt from finetune.py, code written by Frederik Kratzert at
 https://kratzert.github.io/2017/02/24/finetuning-alexnet-with-tensorflow.html
-train OPCNN
+train ONN
 """
 import tensorflow as tf
 from numpy import *
@@ -9,7 +9,7 @@ import numpy as np
 import os
 from datagenerator import ImageDataGenerator
 from datetime import datetime
-from opcnn import OPCNN
+from onn import ONN
 Iterator=tf.data.Iterator
 # os.environ['CUDA_VISIBLE_DEVICES']='0,1'
 
@@ -69,7 +69,7 @@ y = tf.placeholder(tf.float32, [batch_size, num_classes])
 keep_prob = tf.placeholder(tf.float32)
 
 # Initialize model
-model = OPCNN(x, batch_size, keep_prob, num_classes, train_layers)
+model = ONN(x, batch_size, keep_prob, num_classes, train_layers)
 
 # Link variable to model output
 score = model.fc8

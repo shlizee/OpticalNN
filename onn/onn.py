@@ -8,7 +8,7 @@ import numpy as np
 Iterator = tf.data.Iterator
 
 
-# xx, yy, Lambda, k_z_values can all be generated from opcnn_setup.ipynb.
+# xx, yy, Lambda, k_z_values can all be generated from onn_setup.ipynb.
 xx = np.load('xx.npy')
 yy = np.load('yy.npy')
 Lambda = np.load('Lambda.npy')
@@ -166,11 +166,11 @@ def convolve_with_all_kernels(image, batch_size, name):
     return output
 
 
-class OPCNN(object):
-    """Implementation of OPCNN based on AlexNet implementation."""
+class ONN(object):
+    """Implementation of ONN based on AlexNet implementation."""
 
     def __init__(self, x, batch_size, keep_prob, num_classes, skip_layer, weights_path='DEFAULT'):
-        """Create the graph of the OPCNN model.
+        """Create the graph of the ONN model.
 
         Args:
             x: Placeholder for the input tensor.
