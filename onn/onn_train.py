@@ -3,17 +3,16 @@ adopt from finetune.py, code written by Frederik Kratzert at
 https://kratzert.github.io/2017/02/24/finetuning-alexnet-with-tensorflow.html
 train ONN
 """
-import tensorflow as tf
-from numpy import *
-import numpy as np
-import os
-from datagenerator import ImageDataGenerator
 from datetime import datetime
+import os
+import tensorflow as tf
+import numpy as np
+from datagenerator import ImageDataGenerator
 from onn import ONN
-Iterator=tf.data.Iterator
+
 # os.environ['CUDA_VISIBLE_DEVICES']='0,1'
 
-
+Iterator = tf.data.Iterator
 train_file = '/path/to/train.txt'
 val_file = '/path/to/val.txt'
 # Learning params
@@ -24,7 +23,7 @@ batch_size = 4
 # Network params
 dropout_rate = 0.5
 num_classes = 2
-train_layers = ['fc8', 'fc7', 'fc6','conv5','conv4','conv3','conv2','op']
+train_layers = ['fc8', 'fc7', 'fc6', 'conv5', 'conv4', 'conv3', 'conv2', 'op']
 
 # How often we want to write the tf.summary data to disk
 display_step = 200

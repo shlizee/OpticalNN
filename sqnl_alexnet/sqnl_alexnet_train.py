@@ -3,12 +3,13 @@ adopt from finetune.py, code written by Frederik Kratzert at
 https://kratzert.github.io/2017/02/24/finetuning-alexnet-with-tensorflow.html
 train AlexNet with sqnl non-linearity
 """
-from sqnl_alexnet import SqnlAlexNet
-import tensorflow as tf
-import numpy as np
-import os
-from datagenerator import ImageDataGenerator
 from datetime import datetime
+import os
+import numpy as np
+import tensorflow as tf
+from sqnl_alexnet import SqnlAlexNet
+from datagenerator import ImageDataGenerator
+
 
 
 Iterator = tf.data.Iterator
@@ -165,8 +166,8 @@ with tf.Session() as sess:
             # Generate summary with the current batch of data and write to file
             if step % display_step == 0:
                 s = sess.run(merged_summary, feed_dict={x: img_batch,
-                                                         y: label_batch,
-                                                         keep_prob: 1.})
+                                                        y: label_batch,
+                                                        keep_prob: 1.})
 
                 writer.add_summary(s, epoch*train_batches_per_epoch + step)
 
@@ -188,6 +189,6 @@ with tf.Session() as sess:
         test_acc /= test_count
         print("{} Validation Accuracy = {:.4f}".format(datetime.now(),
                                                        test_acc))
-        checkpoint_name = os.path.join(checkpoint_path,'model_epoch'+str(epoch+1)+'.ckpt')
+        checkpoint_name = os.path.join(checkpoint_path, 'model_epoch'+str(epoch+1)+'.ckpt')
         save_path = saver.save(sess, checkpoint_name)
-        print("{} Model checkpoint saved at {}".format(datetime.now(),checkpoint_name))
+        print("{} Model checkpoint saved at {}".format(datetime.now(), checkpoint_name))
