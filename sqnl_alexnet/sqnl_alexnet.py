@@ -1,8 +1,8 @@
 """
-adopt from alexnet.py, code written by Frederik Kratzert at
-https://kratzert.github.io/2017/02/24/finetuning-alexnet-with-tensorflow.html
 modified first layer of AlexNet from using ReLU to square non-linearity,
 also didn't include bias in first layer
+Adapted from alexnet.py, code written by Frederik Kratzert at
+https://kratzert.github.io/2017/02/24/finetuning-alexnet-with-tensorflow.html
 """
 
 import tensorflow as tf

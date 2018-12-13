@@ -1,7 +1,7 @@
 """
-adopt from finetune.py, code written by Frederik Kratzert at
-https://kratzert.github.io/2017/02/24/finetuning-alexnet-with-tensorflow.html
 train ONN
+Adapted from finetune.py, code written by Frederik Kratzert at
+https://kratzert.github.io/2017/02/24/finetuning-alexnet-with-tensorflow.html
 """
 from datetime import datetime
 import os
@@ -9,7 +9,6 @@ import tensorflow as tf
 import numpy as np
 from datagenerator import ImageDataGenerator
 from onn import ONN
-
 # os.environ['CUDA_VISIBLE_DEVICES']='0,1'
 
 Iterator = tf.data.Iterator

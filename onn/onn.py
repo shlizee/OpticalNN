@@ -1,6 +1,6 @@
 """
 replace first layer of AlexNet with optical setup
-adopt other layers of AlexNet code from AlexNet.py, code written by Frederik Kratzert at
+Adapted other layers of AlexNet code from AlexNet.py, code written by Frederik Kratzert at
 https://kratzert.github.io/2017/02/24/finetuning-alexnet-with-tensorflow.html
 """
 import tensorflow as tf

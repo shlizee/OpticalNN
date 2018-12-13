@@ -1,7 +1,7 @@
 """
-adopt from finetune.py, code written by Frederik Kratzert at
-https://kratzert.github.io/2017/02/24/finetuning-alexnet-with-tensorflow.html
 train AlexNet with sqnl non-linearity
+Adapted from finetune.py, code written by Frederik Kratzert at
+https://kratzert.github.io/2017/02/24/finetuning-alexnet-with-tensorflow.html
 """
 from datetime import datetime
 import os
